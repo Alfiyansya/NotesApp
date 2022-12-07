@@ -15,66 +15,75 @@
         android:paddingEnd="10dp">
 
         <EditText
+            android:id="@+id/edtTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/edt_txt_shape"
             android:hint="@string/title"
-            android:maxLines="1"
-            android:id="@+id/edtTitle"
-            android:padding="10dp"
-            android:textColorHint="#D1D1D1"
             android:importantForAutofill="no"
-            android:inputType="text" />
+            android:inputType="text"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColorHint="#F5F5F5" />
 
         <EditText
+            android:id="@+id/edtSubTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/edt_txt_shape"
             android:hint="@string/subtitle"
-            android:maxLines="1"
-            android:id="@+id/edtSubTitle"
+            android:importantForAutofill="no"
             android:inputType="text"
+            android:maxLines="1"
+            android:minHeight="48dp"
             android:padding="10dp"
-            android:textColorHint="#D1D1D1"
-            android:importantForAutofill="no" />
+            android:textColorHint="#F5F5F5" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
+
             <ImageView
+                android:id="@+id/redDot"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:id="@+id/redDot"
                 android:background="@drawable/red_dot"
                 android:contentDescription="@string/red_dot" />
+
             <ImageView
+                android:id="@+id/yellowDot"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:id="@+id/yellowDot"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/yellow_dot"
                 android:contentDescription="@string/yellow_dot" />
+
             <ImageView
+                android:id="@+id/greenDot"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:id="@+id/greenDot"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/green_dot"
                 android:contentDescription="@string/green_dot" />
         </LinearLayout>
+
         <EditText
+            android:id="@+id/edtNotes"
             android:layout_width="match_parent"
             android:layout_height="350dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/edt_txt_shape"
-            android:hint="@string/notes"
-            android:id="@+id/edtNotes"
             android:gravity="start"
-            android:padding="10dp"
-            android:textColorHint="#D1D1D1"
+            android:hint="@string/notes"
             android:importantForAutofill="no"
-            android:inputType="text" />
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColorHint="#F5F5F5" />
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -83,8 +92,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="26dp"
+        android:contentDescription="@string/check_notes"
         android:src="@drawable/ic_check_24"
-        app:backgroundTint="@color/red"
-        android:contentDescription="@string/check_notes" />
+        app:backgroundTint="@color/red" />
 
 </FrameLayout>
