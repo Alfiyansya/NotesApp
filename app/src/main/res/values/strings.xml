@@ -22,5 +22,9 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="check_notes">Check Notes</string>
+    <string name="priority_one">1</string>
+    <string name="priority_two">2</string>
+    <string name="priority_three">3</string>
+    <string name="notes_created_success">Notes Created Successfully</string>
 
 </resources>
