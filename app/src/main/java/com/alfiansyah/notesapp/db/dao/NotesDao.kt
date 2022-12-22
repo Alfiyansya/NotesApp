@@ -14,12 +14,12 @@ interface NotesDao {
     fun getNotes():LiveData<List<Notes>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertNotes(notes: Notes )
+    suspend fun insertNotes(notes: Notes )
 
     @Query("DELETE FROM Notes WHERE id=:id")
-    fun deleteNotes(id: Int)
+    suspend fun deleteNotes(id: Int)
 
     @Update
-    fun updateNotes(notes: Notes)
+    suspend fun updateNotes(notes: Notes)
 
 }

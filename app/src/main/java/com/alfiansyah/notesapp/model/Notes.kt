@@ -7,11 +7,10 @@ import androidx.room.PrimaryKey
 class Notes(
     @PrimaryKey(autoGenerate = true)
     var id: Int? = null,
-
     var title: String,
     var subTitle: String,
     var notes: String,
     var date: String,
     var priority: String
 
-    )
+)
