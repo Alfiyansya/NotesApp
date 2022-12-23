@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.alfiansyah.notesapp.MainActivity
+import com.alfiansyah.notesapp.ui.MainActivity
 import com.alfiansyah.notesapp.R
 
 class SplashScreenActivity : AppCompatActivity() {
