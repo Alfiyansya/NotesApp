@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.alfiansyah.notesapp.R
 import com.alfiansyah.notesapp.databinding.FragmentCreateNotesBinding
@@ -23,7 +23,7 @@ class CreateNotesFragment : Fragment() {
 
     private lateinit var priority: String
 
-    private val viewModel: NotesViewModel by viewModels()
+    private val viewModel: NotesViewModel by activityViewModels()
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
@@ -44,16 +44,16 @@ class CreateNotesFragment : Fragment() {
                 redDot.setImageResource(0)
                 yellowDot.setImageResource(0)
             }
-            redDot.setOnClickListener {
-                priority = resources.getString(R.string.priority_two)
-                redDot.setImageResource(R.drawable.ic_check_24)
-                greenDot.setImageResource(0)
-                yellowDot.setImageResource(0)
-            }
             yellowDot.setOnClickListener {
-                priority = resources.getString(R.string.priority_three)
+                priority = resources.getString(R.string.priority_two)
                 yellowDot.setImageResource(R.drawable.ic_check_24)
+                greenDot.setImageResource(0)
                 redDot.setImageResource(0)
+            }
+            redDot.setOnClickListener {
+                priority = resources.getString(R.string.priority_three)
+                redDot.setImageResource(R.drawable.ic_check_24)
+                yellowDot.setImageResource(0)
                 greenDot.setImageResource(0)
             }
         }
