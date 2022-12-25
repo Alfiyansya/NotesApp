@@ -26,5 +26,6 @@
     <string name="priority_two">2</string>
     <string name="priority_three">3</string>
     <string name="notes_created_success">Notes Created Successfully</string>
+    <string name="notes_updated_success">Notes Updated Successfully</string>
 
 </resources>

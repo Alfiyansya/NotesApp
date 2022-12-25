@@ -38,7 +38,25 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
         repository.deleteNotes(id)
     }
 
-    fun updateNotes(notes: Notes) = viewModelScope.launch {
-        repository.updateNotes(notes)
+    fun updateNotes(
+        id: Int,
+        title: String,
+        subTitle: String,
+        notes: String,
+        date: String,
+        priority: String
+    ) = viewModelScope.launch {
+        viewModelScope.launch {
+
+            val data = Notes(
+                id = id,
+                title = title,
+                subTitle = subTitle,
+                notes = notes,
+                date = date,
+                priority = priority
+            )
+            repository.updateNotes(data)
+        }
     }
 }

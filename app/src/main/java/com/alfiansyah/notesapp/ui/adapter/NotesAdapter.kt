@@ -15,14 +15,14 @@ class NotesAdapter( private val notesList: List<Notes>): RecyclerView.Adapter<No
                 itemNotesSubTitle.text = notes.subTitle
                 itemNotesDate.text = notes.date
                 when(notes.priority){
-                    FIRST_PRIORITY ->{
+                    itemView.resources.getString(R.string.priority_one)->{
                         viewPriority.setBackgroundResource(R.drawable.green_dot)
                     }
-                    SECOND_PRIORITY ->{
+                    itemView.resources.getString(R.string.priority_two)->{
                         viewPriority.setBackgroundResource(R.drawable.yellow_dot)
 
                     }
-                    THIRD_PRIORITY ->{
+                    itemView.resources.getString(R.string.priority_three) ->{
                         viewPriority.setBackgroundResource(R.drawable.red_dot)
 
                     }
@@ -34,16 +34,17 @@ class NotesAdapter( private val notesList: List<Notes>): RecyclerView.Adapter<No
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NotesViewHolder {
         return NotesViewHolder(ItemNotesBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
+    private lateinit var onItemNotesClickCallback: OnItemNotesClickCallback
 
     override fun onBindViewHolder(holder: NotesViewHolder, position: Int) {
         val notes = notesList[position]
         holder.bind(notes)
+        holder.itemView.setOnClickListener {  onItemNotesClickCallback.onItemClicked(it,notes)}
+    }
+    fun setOnItemClickCallback(onItemNotesClickCallback: OnItemNotesClickCallback){
+        this.onItemNotesClickCallback = onItemNotesClickCallback
     }
 
     override fun getItemCount() = notesList.size
-    companion object{
-        private const val FIRST_PRIORITY = "1"
-        private const val SECOND_PRIORITY = "2"
-        private const val THIRD_PRIORITY = "3"
-    }
+
 }
